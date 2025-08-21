@@ -7,7 +7,7 @@ function ProductCard({ product, onEdit }) {
   const inStock = Number(product.stock) > 0;
 
   return (
-    <div className="card-hover bg-white/90 backdrop-blur-sm rounded-xl p-6 border border-white/20 shadow-lg">
+    <div className="card-hover bg-white/90 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300">
       {/* Product Image */}
       <div className="relative mb-4">
         <img
@@ -16,17 +16,17 @@ function ProductCard({ product, onEdit }) {
             "https://via.placeholder.com/300x200?text=No+Image"
           }
           alt={product.title}
-          className="w-full h-48 object-cover rounded-lg shadow-md"
+          className="w-full h-40 sm:h-48 object-cover rounded-lg shadow-md"
           onError={(e) => {
             e.target.src = "https://via.placeholder.com/300x200?text=No+Image";
           }}
         />
         <div className="absolute top-2 right-2">
           <span
-            className={`px-2 py-1 rounded-full text-xs font-medium ${
+            className={`px-3 py-1 rounded-full text-xs font-medium shadow-sm ${
               inStock
-                ? "bg-green-100 text-green-800"
-                : "bg-red-100 text-red-800"
+                ? "bg-green-100 text-green-800 border border-green-200"
+                : "bg-red-100 text-red-800 border border-red-200"
             }`}
           >
             {inStock ? "In Stock" : "Out of Stock"}
@@ -36,18 +36,18 @@ function ProductCard({ product, onEdit }) {
 
       {/* Product Info */}
       <div className="space-y-3">
-        <h3 className="text-lg font-semibold text-gray-800 line-clamp-2 leading-tight text-center">
+        <h3 className="text-base sm:text-lg font-semibold text-gray-800 line-clamp-2 leading-tight text-center min-h-[3rem] flex items-center justify-center">
           {product.title}
         </h3>
 
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-sm text-gray-600 capitalize">
+            <span className="text-sm text-gray-600 capitalize bg-gray-50 px-3 py-1 rounded-full border border-gray-200">
               {product.category}
             </span>
           </div>
           <div className="text-right">
-            <div className="text-2xl font-bold text-gray-900">
+            <div className="text-xl sm:text-2xl font-bold text-gray-900">
               ${product.price.toFixed(2)}
             </div>
             <div className="text-sm text-gray-500">
@@ -57,9 +57,9 @@ function ProductCard({ product, onEdit }) {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex gap-2 pt-2">
+        <div className="flex gap-2 pt-3">
           <button
-            className="btn-warning flex-1 flex items-center justify-center gap-2 "
+            className="btn-warning flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium"
             onClick={() => onEdit(product)}
           >
             <svg
@@ -78,7 +78,7 @@ function ProductCard({ product, onEdit }) {
             Edit
           </button>
           <button
-            className="btn-danger flex-1 flex items-center justify-center gap-2"
+            className="btn-danger flex-1 flex items-center justify-center gap-2 py-2.5 text-sm font-medium"
             onClick={() => {
               if (
                 window.confirm("Are you sure you want to delete this product?")
