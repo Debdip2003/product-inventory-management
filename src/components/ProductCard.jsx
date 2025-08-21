@@ -36,13 +36,12 @@ function ProductCard({ product, onEdit }) {
 
       {/* Product Info */}
       <div className="space-y-3">
-        <h3 className="text-lg font-semibold text-gray-800 line-clamp-2 leading-tight">
+        <h3 className="text-lg font-semibold text-gray-800 line-clamp-2 leading-tight text-center">
           {product.title}
         </h3>
 
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="text-sm text-gray-500">📂</span>
             <span className="text-sm text-gray-600 capitalize">
               {product.category}
             </span>
@@ -60,7 +59,7 @@ function ProductCard({ product, onEdit }) {
         {/* Action Buttons */}
         <div className="flex gap-2 pt-2">
           <button
-            className="btn-warning flex-1 flex items-center justify-center gap-2"
+            className="btn-warning flex-1 flex items-center justify-center gap-2 "
             onClick={() => onEdit(product)}
           >
             <svg

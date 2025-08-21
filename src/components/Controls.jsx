@@ -15,11 +15,11 @@ function Controls({ onAdd }) {
   const filters = useSelector(selectFilters);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {/* Search and Filters */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {/* Search Input */}
-        <div className="lg:col-span-2">
+        <div className="sm:col-span-2 lg:col-span-2">
           <label className="block text-sm font-medium text-gray-700 mb-2">
             🔍 Search Products
           </label>
@@ -83,7 +83,7 @@ function Controls({ onAdd }) {
       </div>
 
       {/* Action Button */}
-      <div className="flex justify-end">
+      <div className="flex flex-col xs:flex-row items-stretch xs:items-center justify-end gap-2 xs:gap-4">
         <button onClick={onAdd} className="btn-primary flex items-center gap-2">
           <svg
             className="w-5 h-5"

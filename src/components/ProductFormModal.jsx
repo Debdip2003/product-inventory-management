@@ -58,10 +58,10 @@ function ProductFormModal({ open, onClose, initial }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-      <div className="w-full max-w-2xl glass-effect rounded-2xl shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4 bg-black/50 backdrop-blur-sm">
+      <div className="w-full h-full sm:h-auto max-w-full sm:max-w-lg md:max-w-2xl glass-effect rounded-none sm:rounded-2xl shadow-2xl flex flex-col justify-center mx-0 sm:mx-auto">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-white/20">
+        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/20">
           <div>
             <h2 className="text-2xl font-bold text-gray-800">
               {initial ? "✏️ Edit Product" : "➕ Add New Product"}
@@ -72,28 +72,13 @@ function ProductFormModal({ open, onClose, initial }) {
                 : "Create a new product entry"}
             </p>
           </div>
-          <button
-            onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 transition-colors p-2 rounded-full hover:bg-gray-100"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
         </div>
 
         {/* Form */}
-        <form onSubmit={onSubmit} className="p-6 space-y-6">
+        <form
+          onSubmit={onSubmit}
+          className="p-4 sm:p-6 space-y-4 sm:space-y-6 overflow-y-auto max-h-[80vh]"
+        >
           {/* Product Name */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -109,7 +94,7 @@ function ProductFormModal({ open, onClose, initial }) {
           </div>
 
           {/* Price and Stock */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 💰 Price *
@@ -166,11 +151,11 @@ function ProductFormModal({ open, onClose, initial }) {
               placeholder="https://example.com/image.jpg"
             />
             {thumbnail && (
-              <div className="mt-2">
+              <div className="mt-2 flex justify-center sm:justify-start">
                 <img
                   src={thumbnail}
                   alt="Preview"
-                  className="w-20 h-20 object-cover rounded-lg border"
+                  className="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-md sm:rounded-lg border"
                   onError={(e) => {
                     e.target.style.display = "none";
                   }}
@@ -180,7 +165,7 @@ function ProductFormModal({ open, onClose, initial }) {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex justify-end gap-3 pt-4 border-t border-gray-200">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-2 sm:gap-3 pt-4 border-t border-gray-200">
             <button
               type="button"
               onClick={onClose}

@@ -40,6 +40,84 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .glass-effect {
+    padding: 1rem !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1.25rem;
+  }
+  .grid,
+  .grid-cols-1,
+  .grid-cols-2,
+  .grid-cols-4,
+  .md\:grid-cols-2,
+  .lg\:grid-cols-3,
+  .xl\:grid-cols-4 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .flex {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  .max-w-7xl,
+  .max-w-2xl,
+  .max-w-md {
+    max-width: 98vw !important;
+  }
+  .rounded-2xl,
+  .rounded-3xl {
+    border-radius: 1rem !important;
+  }
+  .p-6,
+  .p-8,
+  .p-12 {
+    padding: 1rem !important;
+  }
+  .py-8,
+  .py-16 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  .px-4 {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  .text-6xl,
+  .md\:text-7xl,
+  .lg\:text-8xl {
+    font-size: 2.25rem !important;
+    line-height: 2.5rem !important;
+  }
+  .text-4xl,
+  .md\:text-5xl,
+  .lg\:text-6xl {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+  .text-xl,
+  .md\:text-2xl {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+  }
+  .modal {
+    width: 98vw !important;
+    max-width: 98vw !important;
+    min-width: unset !important;
+    left: 1vw !important;
+    right: 1vw !important;
+  }
+  .w-20,
+  .h-20 {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+}
+
 .card-hover {
   transition: all 0.3s ease;
 }

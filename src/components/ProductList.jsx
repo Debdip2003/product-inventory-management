@@ -56,9 +56,9 @@ function ProductList({ onEdit }) {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {/* Results Summary */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-2 xs:gap-4">
         <div className="text-sm text-gray-600">
           Showing <span className="font-semibold">{products.length}</span>{" "}
           product{products.length !== 1 ? "s" : ""}
@@ -66,7 +66,7 @@ function ProductList({ onEdit }) {
       </div>
 
       {/* Product Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
         {products.map((p) => (
           <ProductCard key={p.id} product={p} onEdit={onEdit} />
         ))}
